@@ -12,9 +12,7 @@
 
 This sketch uses ESPClass methods to access various pieces of information about the running environment. This includes details about the resources currently being used, as well as the capabilities of the hardware module. See the [esp.h](https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/Esp.h) header file for the latest official function definitions and [esp.cpp](https://github.com/espressif/arduino-esp32/blob/master/cores/esp32/Esp.cpp) for the actual code.
 
-[Download sketch](https://mmerlin.github.io/esduino/get_environment/get_environment.ino)
-
-There are various tutorials for using specific methods of the ESPClass, but the only documentation of the class my searches found, was a site that published the [doxygen](https://github.com/doxygen/doxygen) [generated from the code](https://lang-ship.com/reference/ESP32/latest/class_esp_class.html). The website is in Japanese, but the doxygen out is english. Feeding the individual website page URLs through google translate does a good job at translating the titles from the website.
+An ESP8266 reference for [EspClass](https://links2004.github.io/Arduino/d4/dd2/class_esp_class.html) exists that is close to ESP32. That includes additional methods that can do a lot more that collect information. That shows the member names and parameters, but nothing useful about what the methods do. The only ESP32 specific documentation my searches found, was a site that published the [doxygen](https://github.com/doxygen/doxygen) [generated from the code](https://lang-ship.com/reference/ESP32/latest/class_esp_class.html). The website is in Japanese, but the doxygen output is english. Feeding the individual website page URLs through google translate does a decent job of translating the titles from the website.
 
 * [EspClass class](https://translate.google.com/translate?sl=auto&tl=en&u=https://lang-ship.com/reference/ESP32/latest/class_esp_class.html)
 * [deepSleep()](https://translate.google.com/translate?sl=auto&tl=en&u=https://lang-ship.com/reference/ESP32/latest/class_esp_class.html%23ac85a1d9fce382cca9b3bc98ed6d01fad)

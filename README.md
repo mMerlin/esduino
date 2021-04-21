@@ -4,7 +4,7 @@ This project includes sample and template code with descriptions and notes for e
 
 To evolve and expand as time and other resources permit.
 
-The intended way to view the project content is through the [project github pages](https://mmerlin.github.io/esduino/). The content there is linked to allow easy browsing among topics.
+The intended way to view the project descriptions amd documentation is through the [project github pages](https://mmerlin.github.io/esduino/). The content there is linked to allow easy browsing among topics. It also provides links to download individual files, or to jump to specific folders here in the project repository.
 
 GOALS:
 

@@ -1,5 +1,14 @@
 /**
   Get hardware and software environment information
+
+  ESP32 has a getEfuseMac() method, but no getChipId() method, the opposite of
+  an ESP8266. To use this with an ESP8266, adjustments may be needed. The
+  differences should be handled by the conditional compile directives, but no
+  ESP8266 module was conveniently available for testing.
+
+  Initial research finds that WiFi needs to be initialized to get the MAC
+  address for the ESP8266, to that is currently excluded here. That is not
+  part of the EspClass being used for the rest of the reporting.
 */
 
 typedef union {
@@ -25,7 +34,6 @@ void loop() {
 
 void getEnvironment()
 {
-  macaddress_t efuseMac;
   uint32_t heapSize = ESP.getHeapSize();
   uint32_t heapFree = ESP.getFreeHeap();
   uint32_t heapMin = ESP.getMinFreeHeap();
@@ -45,9 +53,17 @@ void getEnvironment()
   FlashMode_t flashMode = ESP.getFlashChipMode();
   uint32_t sketchSize = ESP.getSketchSize();
   uint32_t sketchFree = ESP.getFreeSketchSpace();
-  uint32_t chipId = getESP32ChipId();
-
+  String sketchMD5 = ESP.getSketchMD5();
+#if defined(ESP32)
+  macaddress_t efuseMac;
   efuseMac.full = ESP.getEfuseMac();
+  uint32_t chipId = getESP32ChipId(efuseMac);
+  macaddress_t macAddr2 = efuseMac;
+  // Second mac address is the same as the first, with the final bit set
+  macAddr2.bytes[5] |= 1;
+#elif defined(ESP8266)
+  uint32_t chipId = getChipId();
+#endif
 
   Serial.printf_P(PSTR("\nEnvironment details\n\n"));
   Serial.printf_P(PSTR("Heap: size %u(0x%x), free %u(0x%x), min %u(0x%x), max %u(0x%x)\n"),
@@ -60,12 +76,18 @@ void getEnvironment()
   Serial.printf_P(PSTR("Flash: size %u(0x%x), SPI speed %u(0x%x), mode %u(%s)\n"),
     flashSize, flashSize, flashSpeed, flashSpeed, flashMode, flashModeName(flashMode));
   Serial.printf_P(PSTR("Sketch: size %u(0x%x), free %u(0x%x), MD5 %s\n"),
-    sketchSize, sketchSize, sketchFree, sketchFree, ESP.getSketchMD5().c_str());
-  Serial.printf_P(PSTR("Efuse MAC: %llu(%llx) %02x:%02x:%02x:%02x:%02x:%02x\n"),
+    sketchSize, sketchSize, sketchFree, sketchFree, sketchMD5.c_str());
+#if defined(ESP32)
+  Serial.printf_P(PSTR("Efuse MAC  : %llu(%llx) %02x:%02x:%02x:%02x:%02x:%02x\n"),
     efuseMac.full, efuseMac.full,
     efuseMac.bytes[0], efuseMac.bytes[1], efuseMac.bytes[2],
-    efuseMac.bytes[3], efuseMac.bytes[4], efuseMac.bytes[5]/* | 1 */);
+    efuseMac.bytes[3], efuseMac.bytes[4], efuseMac.bytes[5]);
   // esptool.py read_mac ¦ MAC: fc:f5:c4:16:32:fc
+  Serial.printf_P(PSTR("Soft AP MAC: %llu(%llx) %02x:%02x:%02x:%02x:%02x:%02x\n"),
+    macAddr2.full, macAddr2.full,
+    macAddr2.bytes[0], macAddr2.bytes[1], macAddr2.bytes[2],
+    macAddr2.bytes[3], macAddr2.bytes[4], macAddr2.bytes[5]);
+#endif
 } // end getEnvironment()
 
 /**
@@ -80,12 +102,10 @@ void getEnvironment()
   an identifier that can be no more than a 32-bit integer
   (like for switch...case).
 
-  @return low 24 bits of (chip) mac address
+  @return low 24 bits of mac address
 */
-uint32_t getESP32ChipId()
+uint32_t getESP32ChipId(macaddress_t chipMac)
 {
-  macaddress_t chipMac;
-  chipMac.full = ESP.getEfuseMac();
   return (chipMac.bytes[3] << 16) | (chipMac.bytes[4] << 8) | chipMac.bytes[5];
 } // end getESP32ChipId()
 

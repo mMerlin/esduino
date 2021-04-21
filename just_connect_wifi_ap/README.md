@@ -43,7 +43,7 @@ When using git to share the project, a `.gitignore` file can be included, with a
 
 ### <a name="link_include_guard">⚓</a> include guard
 
-An [include guard](https://en.wikipedia.org/wiki/Include_guard) is a safety measure, used to prevent a file from being included in a project build multiple times. For the typical usage or include (.h) files, including it once will provide all of the needed information for a single build (compile). Additional inclusions can cause problems, due to duplicate names.
+An [include guard](https://en.wikipedia.org/wiki/Include_guard) is a safety measure, used to prevent a file from being included in a project build multiple times. For the typical usage of include (.h) files, including it once will provide all of the needed information for a single build (compile). Additional inclusions can cause problems, due to duplicate names.
 
 ```c++
 #ifndef UNIQUE_NAME_FILE_H
@@ -84,3 +84,11 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 ## <a name="link_template_code">⚓</a> WiFi connection template code
 
 This code should be able to be merged into most projects by directly copying the `attemptConnection()` and `reportConnectionDetails()` functions. A connection is created by calling `attemptConnection()` (typically in `setup()`, but other options work too), and passing the required credential information. Including the `secrets.h` file will provide access to argument names specified in the example code.
+
+## Test markdown links
+
+Relative links to test from github pages, and repository folder
+
+* [no_credentials_reconnect](../no_credentials_reconnect/)
+* [get_environment](../get_environment/)
+* [home](/)
