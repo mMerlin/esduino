@@ -30,7 +30,7 @@ Setting up and managing wireless connections.
     * Demonstration of include guard
     * template for creating secrets.h
 
-* [no_credentials_reconnect]
+* [no_credentials_reconnect](no_credentials_reconnect/)
   * Template code for reestablishing a WiFi connection once the information is stored in flash memory. See [just_connect_wifi_ap](just_connect_wifi_ap/)
 
 ## <a name="link_environment">⚓</a> Hardware and Software run time environment information
@@ -43,7 +43,20 @@ Setting up and managing wireless connections.
 Mixture of links
 
 * [project readme (md)](README.md)
+* [project /readme (md)](/README.md)
+* [project ./readme (md)](./README.md)
 * [project readme (html)](README.html)
+* [project /readme (html)](/README.html)
+* [project ./readme (html)](./README.html)
 * [project readme (github view)](https://github.com/mMerlin/esduino/tree/main/README.md)
 * [project readme (raw)](https://raw.githubusercontent.com/mMerlin/esduino/main/README.md)
 * [project readme (permalink)](https://github.com/mMerlin/esduino/blob/36bd463b6a2ce10fee4f31a0a6bc662df04daf7f/README.md)
+
+try same link patterns again, using a different root level markdown file
+
+* [project test (md)](test.md)
+* [project /test (md)](/test.md)
+* [project ./test (md)](./test.md)
+* [project test (html)](test.html)
+* [project /test (html)](/test.html)
+* [project ./test (html)](./test.html)

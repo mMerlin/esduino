@@ -9,7 +9,7 @@
   * ESP32 or ESP8266 board
     * Once provided credentials to access a local access point, this code should work with any ESP32 or ESP8266 board that matches the `board` selections available in Arduino IDE.
 
-This project can be used to provide template wireless access point connection code for use in other projects. It can also be built as a standalone project to establish a connection to an access point that will be remembered across resets, power cycling, and new sketch loads. Once successfully connected, the WiFi module stores the needed information in flash memory. Other sketches can then use that to "re"-connect to the same AP, without supplying any login credentials. See
+This sketch can be used to provide template wireless access point connection code for use in other projects. It can also be built as a standalone project to establish a connection to an access point that will be remembered across resets, power cycling, and new sketch loads. Once successfully connected, the WiFi module stores the needed information in flash memory. Other sketches can then use that to "re"-connect to the same AP, without supplying any login credentials. See
 [no_credentials_reconnect](../no_credentials_reconnect/)
 for example and template code for reconnecting.
 
