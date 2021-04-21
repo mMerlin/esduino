@@ -10,7 +10,7 @@
     * Once provided credentials to access a local access point, this code should work with any ESP32 or ESP8266 board that matches the `board` selections available in Arduino IDE.
 
 This project can be used to provide template wireless access point connection code for use in other projects. It can also be built as a standalone project to establish a connection to an access point that will be remembered across resets, power cycling, and new sketch loads. Once successfully connected, the WiFi module stores the needed information in flash memory. Other sketches can then use that to "re"-connect to the same AP, without supplying any login credentials. See
-[no_credentials_reconnect](../no_credentials_reconnect/)
+[no_credentials_reconnect](no_credentials_reconnect.md)
 for example and template code for reconnecting.
 
 <!--
@@ -32,7 +32,7 @@ Since the `secrets.h` file, and the definitions it provides, are still needed to
 
 Specifying the access credentials in the `secrets.h` file is not enough to keep them private, if the secrets file is included in a repository that is shared publicly. To prevent that `leakage`, a `.gitignore` file can be added to the git repository that marks the `secrets.h` file to be excluded from `add` operations. As long as the `.gitignore` file, with the proper entry, exists before adding new files (after creating secrets.h), git will not offer to automatically save the secrets.h file in the repository. It remains in the local project folder, but is not part of the published repository.
 
-[View File](.gitignore) ¦ [Download](https://mmerlin.github.io/esduino/just_connect_wifi_ap/.gitignore)
+[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/.gitignore) ¦ [Download](just_connect_wifi_ap/.gitignore)
 
 ```.gitignore
 # Not to be shared with the project files
