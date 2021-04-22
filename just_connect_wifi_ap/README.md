@@ -99,7 +99,8 @@ links to test both from github pages, and repository folder
 * [get_environment](../get_environment/)
 * [home](/)
 * [up](../)
-* [project](/espduino)
+* [project](/esduino)
+* [project/](/esduino/)
 * .gitignore
   * [name](.gitignore)
   * [./ prefix](./.gitignore)
@@ -109,5 +110,5 @@ links to test both from github pages, and repository folder
 * just_connect_wifi_ap.ino
   * [name](just_connect_wifi_ap.ino)
   * [./ prefix](./just_connect_wifi_ap.ino)
-  * [blob/main](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap.ino)
-  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap.ino)
+  * [blob/main](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/just_connect_wifi_ap.ino)
+  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap/just_connect_wifi_ap.ino)
