@@ -32,7 +32,13 @@ Since the `secrets.h` file, and the definitions it provides, are still needed to
 
 Specifying the access credentials in the `secrets.h` file is not enough to keep them private, if the secrets file is included in a repository that is shared publicly. To prevent that `leakage`, a `.gitignore` file can be added to the git repository that marks the `secrets.h` file to be excluded from `add` operations. As long as the `.gitignore` file, with the proper entry, exists before adding new files (after creating secrets.h), git will not offer to automatically save the secrets.h file in the repository. It remains in the local project folder, but is not part of the published repository.
 
-[View File](.gitignore) ¦ [Download](https://mmerlin.github.io/esduino/just_connect_wifi_ap/.gitignore)
+[View File](.gitignore)
+<!--
+ broken link: github pages handles hidden «`.` prefix» files differently
+ ¦ [Download](https://mmerlin.github.io/esduino/just_connect_wifi_ap/.gitignore)
+ May be able to replace with a link through the repository pages, if get create one directly to the file, instead of the file's page.
+ Would like a link that works from both github.io and the repository folder page (README)
+-->
 
 ```.gitignore
 # Not to be shared with the project files
@@ -87,8 +93,21 @@ This code should be able to be merged into most projects by directly copying the
 
 ## Test markdown links
 
-Relative links to test from github pages, and repository folder
+links to test both from github pages, and repository folder
 
 * [no_credentials_reconnect](../no_credentials_reconnect/)
 * [get_environment](../get_environment/)
 * [home](/)
+* [up](../)
+* [project](/espduino)
+* .gitignore
+  * [name](.gitignore)
+  * [./ prefix](./.gitignore)
+  * [blob/main](https://github.com/mMerlin/esduino/blob/main/.gitignore)
+  * [permalink](https://github.com/mMerlin/esduino/blob/88b2b17f05cd4663508f30aa0642c3b6434693e5/.gitignore)
+  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/.gitignore)
+* just_connect_wifi_ap.ino
+  * [name](just_connect_wifi_ap.ino)
+  * [./ prefix](./just_connect_wifi_ap.ino)
+  * [blob/main](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap.ino)
+  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap.ino)
