@@ -32,13 +32,7 @@ Since the `secrets.h` file, and the definitions it provides, are still needed to
 
 Specifying the access credentials in the `secrets.h` file is not enough to keep them private, if the secrets file is included in a repository that is shared publicly. To prevent that `leakage`, a `.gitignore` file can be added to the git repository that marks the `secrets.h` file to be excluded from `add` operations. As long as the `.gitignore` file, with the proper entry, exists before adding new files (after creating secrets.h), git will not offer to automatically save the secrets.h file in the repository. It remains in the local project folder, but is not part of the published repository.
 
-[View File](.gitignore)
-<!--
- broken link: github pages handles hidden «`.` prefix» files differently
- ¦ [Download](https://mmerlin.github.io/esduino/just_connect_wifi_ap/.gitignore)
- May be able to replace with a link through the repository pages, if get create one directly to the file, instead of the file's page.
- Would like a link that works from both github.io and the repository folder page (README)
--->
+[View File](https://github.com/mMerlin/esduino/blob/main/.gitignore) ¦ [Download](https://raw.githubusercontent.com/mMerlin/esduino/main/.gitignore) (right-click + Save As)
 
 ```.gitignore
 # Not to be shared with the project files
@@ -72,6 +66,8 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 * The template file can include comments about how to use it
 * The (main) project code file can include comments with the steps needed to create `secrets.h` from the template file
 
+[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/template_secries.h) ¦ [Download](template_secries.h)
+
 ```c++
 #ifndef MY_SECRETS_H
 #define MY_SECRETS_H
@@ -90,25 +86,3 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 ## <a name="link_template_code">⚓</a> WiFi connection template code
 
 This code should be able to be merged into most projects by directly copying the `attemptConnection()` and `reportConnectionDetails()` functions. A connection is created by calling `attemptConnection()` (typically in `setup()`, but other options work too), and passing the required credential information. Including the `secrets.h` file will provide access to argument names specified in the example code.
-
-## Test markdown links
-
-links to test both from github pages, and repository folder
-
-* [no_credentials_reconnect](../no_credentials_reconnect/)
-* [get_environment](../get_environment/)
-* [home](/)
-* [up](../)
-* [project](/esduino)
-* [project/](/esduino/)
-* .gitignore
-  * [name](.gitignore)
-  * [./ prefix](./.gitignore)
-  * [blob/main](https://github.com/mMerlin/esduino/blob/main/.gitignore)
-  * [permalink](https://github.com/mMerlin/esduino/blob/88b2b17f05cd4663508f30aa0642c3b6434693e5/.gitignore)
-  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/.gitignore)
-* just_connect_wifi_ap.ino
-  * [name](just_connect_wifi_ap.ino)
-  * [./ prefix](./just_connect_wifi_ap.ino)
-  * [blob/main](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/just_connect_wifi_ap.ino)
-  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap/just_connect_wifi_ap.ino)

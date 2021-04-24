@@ -23,11 +23,11 @@ Setting up and managing wireless connections.
 
 * [just_connect_wifi_ap](just_connect_wifi_ap/) ¦ [repository folder](https://github.com/mMerlin/esduino/tree/main/just_connect_wifi_ap/)
   * Template code for establishing an initial connection to the local wireless access point.
-  * Once local credentials are filled in, this can be used as a stand-alone sketch to create the initial connection. Unless the credentials change (password changed, or move to a different AP), this only needs to be run once. The ESP32 saves the details in flash memory, and later connections can simple 'reconnect'. See [no_credentials_reconnect](no_credentials_reconnect/).
+  * Once local credentials are filled in, this can be used as a stand-alone sketch to create the initial connection. Unless the credentials change (password change, or move to a different AP), this only needs to be run once. The ESP32 saves the details in flash memory, and later connections can simple 'reconnect'. See [no_credentials_reconnect](no_credentials_reconnect/).
   * Other features
     * private (local environment) data stored only in secrets.h file
     * Use `.gitignore` to exclude the secrets.h file from shared repositories
-    * Demonstration of include guard
+    * Demonstration of [include guard](https://en.wikipedia.org/wiki/Include_guard)
     * template for creating secrets.h
 
 * [no_credentials_reconnect](no_credentials_reconnect/)

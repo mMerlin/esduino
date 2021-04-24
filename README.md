@@ -6,7 +6,7 @@ This project includes sample and template code with descriptions and notes for e
 
 To evolve and expand as time and other resources permit.
 
-This project is designed to be viewed using the github pages (github.io) website. The content there provides an index, some overview information, and shortcuts to things like downloading and viewing the raw content of file. The links there generally work directly from the README content of each sketch folder, The github.io site is a convenience, with a bit of extra functionality, but not a requirement to using the repository effectively.
+This project is designed to be viewed using the github pages (github.io) website. The content there provides an index, some overview information, and shortcuts to things like downloading and viewing the raw content of files. The links there generally work directly from the README content of each sketch folder as well. The github.io site is a convenience, with a bit of extra functionality, but not a requirement to using the repository effectively.
 
 GOALS:
 
