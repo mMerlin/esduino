@@ -66,7 +66,7 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 * The template file can include comments about how to use it
 * The (main) project code file can include comments with the steps needed to create `secrets.h` from the template file
 
-[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/template_secries.h) ¦ [Download](template_secries.h)
+[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/template_secrets.h) ¦ [Download](template_secrets.h)
 
 ```c++
 #ifndef MY_SECRETS_H
