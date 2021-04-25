@@ -1,7 +1,7 @@
 # Just Connect to WiFi AP
 
 * Features
-  * WiFi AP credentials read from [`secrets.h` include file](#link_secrets).
+  * WiFi AP credentials read from [`secrets.h` include file](#link_secrets)
     * [.gitignore](#link_git_ignore)
     * [include guard](#link_include_guard)
     * [Template include file](#link_template_secrets) to copy to create personal version of `secrets.h`
@@ -9,9 +9,7 @@
   * ESP32 or ESP8266 board
     * Once provided credentials to access a local access point, this code should work with any ESP32 or ESP8266 board that matches the `board` selections available in Arduino IDE.
 
-This sketch can be used to provide template wireless access point connection code for use in other projects. It can also be built as a standalone project to establish a connection to an access point that will be remembered across resets, power cycling, and new sketch loads. Once successfully connected, the WiFi module stores the needed information in flash memory. Other sketches can then use that to "re"-connect to the same AP, without supplying any login credentials. See
-[no_credentials_reconnect](../no_credentials_reconnect/)
-for example and template code for reconnecting.
+This sketch can be used to provide template wireless access point connection code for use in other projects. It can also be built as a standalone project to establish a connection to an access point that will be remembered across resets, power cycling, and new sketch loads. Once successfully connected, the WiFi module stores the needed information in flash memory. Other sketches can then use that to "re"-connect to the same AP, without supplying any login credentials. See [no_credentials_reconnect](../no_credentials_reconnect/) for example and template code for reconnecting.
 
 <!--
 * [Link](#link_link)
@@ -32,14 +30,14 @@ Since the `secrets.h` file, and the definitions it provides, are still needed to
 
 Specifying the access credentials in the `secrets.h` file is not enough to keep them private, if the secrets file is included in a repository that is shared publicly. To prevent that `leakage`, a `.gitignore` file can be added to the git repository that marks the `secrets.h` file to be excluded from `add` operations. As long as the `.gitignore` file, with the proper entry, exists before adding new files (after creating secrets.h), git will not offer to automatically save the secrets.h file in the repository. It remains in the local project folder, but is not part of the published repository.
 
-[View File](https://github.com/mMerlin/esduino/blob/main/.gitignore) ¦ [Download](https://raw.githubusercontent.com/mMerlin/esduino/main/.gitignore) (right-click + Save As)
+[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/.gitignore) ¦ [Download](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap/.gitignore) (right-click + Save Link As)
 
 ```.gitignore
 # Not to be shared with the project files
 secrets.h
 ```
 
-When using git to share the project, a `.gitignore` file can be included, with an entry to exclude the `secrets.h` file. Since people trying to use the shared project will need their own secrets file, include a `secrets_template.h` file in the project, that contains samples of the needed information, and instructions for copying it to `secrets.h`, and making the needed changes there.
+When using git to share the project, a `.gitignore` file can be included, with an entry to exclude the `secrets.h` file. Since people trying to use the shared project will need their own secrets file, include a [secrets_template.h](#link_template_secrets) file in the project, that contains samples of the needed information, and instructions for copying it to `secrets.h`, and making the needed changes there.
 
 ### <a name="link_include_guard">⚓</a> include guard
 
@@ -66,7 +64,7 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 * The template file can include comments about how to use it
 * The (main) project code file can include comments with the steps needed to create `secrets.h` from the template file
 
-[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/template_secrets.h) ¦ [Download](template_secrets.h)
+[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/template_secrets.h) ¦ [Download](template_secrets.h) ¦ [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap/template_secrets.h)
 
 ```c++
 #ifndef MY_SECRETS_H
@@ -86,14 +84,3 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 ## <a name="link_template_code">⚓</a> WiFi connection template code
 
 This code should be able to be merged into most projects by directly copying the `attemptConnection()` and `reportConnectionDetails()` functions. A connection is created by calling `attemptConnection()` (typically in `setup()`, but other options work too), and passing the required credential information. Including the `secrets.h` file will provide access to argument names specified in the example code.
-
-## More link pattern testing
-
-* template_secrets.h
-  * [name](template_secrets.h)
-  * [./name](./template_secrets.h)
-  * [folder/name](just_connect_wifi_ap/template_secrets.h)
-  * [./folder/name](./just_connect_wifi_ap/template_secrets.h)
-  * [/folder/name](/just_connect_wifi_ap/template_secrets.h)
-  * [repo](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/template_secrets.h)
-  * [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap/template_secrets.h)

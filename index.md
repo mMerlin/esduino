@@ -2,6 +2,7 @@
 
 * [WiFi](#link_wifi) ¦ setting up and managing connections
 * [environment](#link_environment) ¦ hardware and software environment information
+* [Time](#link_time) ¦ setting and using time
 
 <!--
 * [Link](#link_link)
@@ -37,3 +38,8 @@ Setting up and managing wireless connections.
 
 * [get_environment](get_environment/) ¦ [repository folder](https://github.com/mMerlin/esduino/tree/main/get_environment/)
   * Template code to collect (and report) information about the runtime board and software environment
+
+## <a name="link_time">⚓</a> Time
+
+* [set_time_using_ntp](set_time_using_ntp/) ¦ [repository folder](https://github.com/mMerlin/esduino/tree/main/set_time_using_ntp/)
+  * Template code to set the internal clock from internet time server
