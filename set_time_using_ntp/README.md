@@ -52,7 +52,7 @@ When using git to share the project, a `.gitignore` file can be included, with a
 
 ### <a name="link_include_guard">⚓</a> include guard
 
-An [include guard](https://en.wikipedia.org/wiki/Include_guard) is a safety measure, used to prevent a file from being included in a project build multiple times. For the typical usage of include (.h) files, including it once will provide all of the needed information for a single build (compile). Additional inclusions can cause problems, due to duplicate names.
+An [include guard](https://github.com/mMerlin/esduino/wiki/include-guard) is a safety measure, used to prevent the definitions in a file from being included in a project build multiple times. For the typical usage of include (.h) files, including it once will provide all of the needed information for a single build (compile). Additional inclusions can cause problems, due to duplicate names.
 
 ```c++
 #ifndef UNIQUE_NAME_FILE_H
@@ -142,3 +142,14 @@ configTime(utcOffset_sec, daylightOffset_sec, ntpServer);
 Make sure to include some delay after `configTime()` before disconnecting from WiFi. It takes a little time to get the time information from the Internet. Calling the supplied `printLocalTime()` is usually enough. Or just `freshLocalTime()`, if you do not want to output the formatted time details. Those are convenience functions for the demonstration. They are not need to actually set the ESP rtc (real time clock) to the time from the Internet. A `struct tm` variable passed in a call to the `getLocalTime()` function from the time library is enough to access the time after it has been set. There are other options as well, but that is beyond the scope of this example, which is focused on getting the time for the esp board set using an [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) server.
 
 [View File](https://github.com/mMerlin/esduino/blob/main/set_time_using_ntp/set_time_using_ntp.ino) ¦ [Download](set_time_using_ntp.ino) ¦ [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/set_time_using_ntp/set_time_using_ntp.ino)
+
+## yet another link test
+
+* direct wiki page references
+  * [[guard 1|include guard]] wiki link, space in name
+  * [[guard 2|include-guard]] wiki link, space changed to dash
+  * [[guard 3|include_guard]] wiki link, space changed to underscore
+* prefix page name with "wiki/"
+  * [[guard 1|wiki/include guard]] wiki link, space in name
+  * [[guard 2|wiki/include-guard]] wiki link, space changed to dash
+  * [[guard 3|wiki/include_guard]] wiki link, space changed to underscore
