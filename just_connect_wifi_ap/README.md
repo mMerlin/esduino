@@ -84,3 +84,5 @@ Since the `secrets.h` file is excluded from shared projects, to hide personal in
 ## <a name="link_template_code">⚓</a> WiFi connection template code
 
 This code should be able to be merged into most projects by directly copying the `attemptConnection()` and `reportConnectionDetails()` functions. A connection is created by calling `attemptConnection()` (typically in `setup()`, but other options work too), and passing the required credential information. Including the `secrets.h` file will provide access to argument names specified in the example code.
+
+[View File](https://github.com/mMerlin/esduino/blob/main/just_connect_wifi_ap/just_connect_wifi_ap.ino) ¦ [Download](just_connect_wifi_ap.ino) ¦ [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/just_connect_wifi_ap/just_connect_wifi_ap.ino)

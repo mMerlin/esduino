@@ -19,6 +19,8 @@ An ESP8266 reference for [EspClass](https://links2004.github.io/Arduino/d4/dd2/c
 
 It seems easier to just look at the raw .h and .cpp files in the links above.
 
-## <a name="link_template_code">⚓</a> WiFi connection template code
+## <a name="link_template_code">⚓</a> Access runtime details template code
 
 This code should be able to be merged into most projects by directly copying the `getEnvironment()` function and `macaddress_t` definition. The `getESP32ChipId()` and `flashModeName()` functions will be needed as well, if those details are desired. No extra library or include file is needed.
+
+[View File](https://github.com/mMerlin/esduino/blob/main/get_environment/get_environment.ino) ¦ [Download](get_environment.ino) ¦ [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/get_environment/get_environment.ino)

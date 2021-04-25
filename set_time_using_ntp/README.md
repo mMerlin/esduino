@@ -140,3 +140,5 @@ configTime(utcOffset_sec, daylightOffset_sec, ntpServer);
 ```
 
 Make sure to include some delay after `configTime()` before disconnecting from WiFi. It takes a little time to get the time information from the Internet. Calling the supplied `printLocalTime()` is usually enough. Or just `freshLocalTime()`, if you do not want to output the formatted time details. Those are convenience functions for the demonstration. They are not need to actually set the ESP rtc (real time clock) to the time from the Internet. A `struct tm` variable passed in a call to the `getLocalTime()` function from the time library is enough to access the time after it has been set. There are other options as well, but that is beyond the scope of this example, which is focused on getting the time for the esp board set using an [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol) server.
+
+[View File](https://github.com/mMerlin/esduino/blob/main/set_time_using_ntp/set_time_using_ntp.ino) ¦ [Download](set_time_using_ntp.ino) ¦ [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/set_time_using_ntp/set_time_using_ntp.ino)

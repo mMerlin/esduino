@@ -25,3 +25,5 @@ This is very useful when doing exploration, testing and development, where multi
 This code should be able to be merged into most projects by directly copying the `attemptConnection()` and `reportConnectionDetails()` functions. `WiFi.h` or `ESP8266WiFi.h` needs to be included as well, although that is probably required by the target project anyway.
 
 A connection is created by calling `attemptConnection()` (typically in `setup()`, but other options work too). The required credentials must have been previous saved to flash memory using other code (like [just_connect_wifi_ap](../just_connect_wifi_ap/)).
+
+[View File](https://github.com/mMerlin/esduino/blob/main/no_credentials_reconnect/no_credentials_reconnect.ino) ¦ [Download](no_credentials_reconnect.ino) ¦ [raw](https://raw.githubusercontent.com/mMerlin/esduino/main/no_credentials_reconnect/no_credentials_reconnect.ino)
