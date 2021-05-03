@@ -41,20 +41,7 @@ When using git to share the project, a `.gitignore` file can be included, with a
 
 ### <a name="link_include_guard">⚓</a> include guard
 
-An [include guard](https://en.wikipedia.org/wiki/Include_guard) is a safety measure, used to prevent a file from being included in a project build multiple times. For the typical usage of include (.h) files, including it once will provide all of the needed information for a single build (compile). Additional inclusions can cause problems, due to duplicate names.
-
-```c++
-#ifndef UNIQUE_NAME_FILE_H
-#define UNIQUE_NAME_FILE_H
-
-// Normal include file content
-
-#endif
-```
-
-The initial `#ifndef` line checks if the unique name has already been defined. If it does exist, everything up to the corresponding `#endif` is skipped. The `#define` line creates the unique name, so the wrapped *normal* content will only be processed (included) the first time the compiler reads the file.
-
-A project with a single .ino file and single .h file does not require this. Adding more .h and .cpp files to the project often results in the same .h file(s) being included from multiple places. There is no problem with using an include guard when it not needed. The compiler will still process the content exactly once. It is a good habit to provided the guard, so that it will exist when it is needed.
+An [include guard](https://github.com/mMerlin/esduino/wiki/include-guard) is a safety measure, used to prevent the definitions in an included header file from being processed in a project build multiple times.
 
 ### <a name="link_template_secrets">⚓</a> template for secrets.h
 
