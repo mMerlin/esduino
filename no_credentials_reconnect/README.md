@@ -1,5 +1,7 @@
 # No credentials reconnection
 
+* [esduino](https://mmerlin.github.io/esduino/) github.io pages.
+
 * Features
   * Use credentials automatically stored in flash memory
   * [Template code](#link_template_code) to establish connection to WiFi Access Point

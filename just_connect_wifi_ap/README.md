@@ -1,5 +1,7 @@
 # Just Connect to WiFi AP
 
+* [esduino](https://mmerlin.github.io/esduino/) github.io pages.
+
 * Features
   * WiFi AP credentials read from [`secrets.h` include file](#link_secrets)
     * [.gitignore](#link_git_ignore)

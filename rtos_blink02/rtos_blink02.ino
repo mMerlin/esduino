@@ -57,12 +57,12 @@ void loop() {
 /**
  * function to be run as a task to blink a single LED
  *
- * @param[in] parameter data about the led pin blink timing
+ * @param[in] parameter data about the led pin and blink timing
  */
-void taskBlink(void * parameter)
+void taskBlink(void * const parameter)
 {
-  task_data_t * blinkData = (task_data_t *)parameter;
-  while (true) // Runs forever, link void loop()
+  task_data_t * const blinkData = (task_data_t *)parameter;
+  while (true) // Runs forever, like void loop()
   {
     taskLoop(blinkData->ledPin, blinkData->onTime, blinkData->offTime);
   }
@@ -71,7 +71,7 @@ void taskBlink(void * parameter)
 /**
  * void loop() clone, passing in the data needed for blink
  */
-void taskLoop(size_t blinkPin, unsigned long onDelay, unsigned long offDelay)
+void taskLoop(const size_t blinkPin, const unsigned long onDelay, const unsigned long offDelay)
 {
   digitalWrite(blinkPin, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(onDelay);                 // wait while the LED stays on

@@ -27,9 +27,6 @@ const unsigned long TASK3_ON_TIME = 500;
 const unsigned long TASK3_OFF_TIME = 800;
 
 void setup() {
-  pinMode(TASK2_PIN, OUTPUT);
-  pinMode(TASK3_PIN, OUTPUT);
-
   // create a separate task to blink each LED
 
   xTaskCreate(
